@@ -20,7 +20,6 @@ class User_controller{
     async deleteUser (req, res) {
         const id = req.params.id
         const user = await db.query('delete from first_practice where id = $1 returning *', [id])
-        console.log(user)
         res.json(user.rows[0])
     }
     async getOneUser (req, res) {
